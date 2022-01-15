@@ -1,0 +1,43 @@
+<mat-sidenav-container class="main-container">
+  <mat-sidenav #sidenav mode="side" class="sidebar">
+    Sidenav content
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <app-desktop-header class="content__header" (sidenavToggle)="sidenav.toggle()">
+    </app-desktop-header>
+    <main class="content__main">
+     
+     <form class="body__form " [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <ng-select
+            [searchable]="false"
+            [clearable]="false"
+            placeholder="Pa&iacute;s"
+            formControlName="country"
+            class="custom"
+            [ngClass]="
+              loginForm.get('country').touched &&
+              loginForm.get('country').invalid
+                ? 'select-error'
+                : ''
+            "
+          >
+            <ng-option *ngFor="let country of countries" [value]="country.id">
+              <!-- <img src="{{ country.image }}" width="20px" height="20px" /> -->
+              {{ country.value }}
+            </ng-option>
+          </ng-select>        
+        </div>
+     </form>
+      
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

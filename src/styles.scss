@@ -1,0 +1,23 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+.ng-select.custom {
+    border:0px;
+    min-height: 3.5rem;
+    border-radius: 8px;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 3.5rem;
+    border-radius: 8px;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border-color: red;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 0 3px rgba(0,126,255,0.1);
+}
+
+
+/**  Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */
